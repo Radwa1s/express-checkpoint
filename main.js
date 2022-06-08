@@ -11,11 +11,11 @@ const workingdays = (req, res, next) => {
   const hours = date.getHours();
 
   const dayoff = [0, 6];
-  const closetime = [9, 10, 11, 12, 13, 14, 15, 16];
+  const opentime = [9, 10, 11, 12, 13, 14, 15, 16];
 
   if (dayoff.includes(day)) {
     res.redirect("/closingtime");
-  } else if (!closetime.includes(hours)) {
+  } else if (!opentime.includes(hours)) {
     res.redirect("/closehours");
   }
 
